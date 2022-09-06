@@ -2,6 +2,7 @@
     "name": "hexlet/code",
     "description": "Learning project in Hexlet courses",
     "type": "project",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
@@ -11,6 +12,9 @@
         {
             "name": "Apanasenko Andrey"
         }
+    ],
+    "bin": [
+        "bin/brain-games"
     ],
     "require": {}
 }
