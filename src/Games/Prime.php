@@ -19,6 +19,10 @@ for ($iter = 0; $iter < 3; $iter++) {
         }
     }
 
+    if ($a === 1) {
+        $answer = 'yes';
+    }
+
     $question = $a;
 
     $iter === 2 ? $break = true : $break = false;
