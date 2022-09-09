@@ -22,7 +22,7 @@ function getGreeting()
     return $name;
 }
 
-function getAnswers($condition, $question, $answer, $break, $name = false)
+function getAnswers(string $condition, string|int $question, string|int $answer, bool $break, string $name)
 {
     line($condition);
 
