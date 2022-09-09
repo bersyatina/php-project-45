@@ -13,7 +13,7 @@ if (file_exists($autoloadPath1)) {
 
 use function cli\line;
 use function cli\prompt;
-
+// Bug is fixed
 function getGreeting()
 {
     line('Welcome to the Brain Games!');
