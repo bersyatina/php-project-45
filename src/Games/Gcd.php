@@ -14,8 +14,7 @@ for ($iter = 0; $iter < 3; $iter++) {
 
     $question = "$a $b";
 
-    while ($b != 0)
-    {
+    while ($b != 0) {
         $m = $a % $b;
         $a = $b;
         $b = $m;
