@@ -31,14 +31,13 @@ function getAnswers($condition, $question, $answer, $break, $name = false)
     if ($userQuestion == $answer) {
         line("Your answer: $question");
         line("Correct!");
+        if ($break === true) {
+            line("Congratulations, $name!");
+        }
     } else {
         line("Your answer: $userQuestion");
         line("'$userQuestion' is wrong answer ;(. Correct answer was '$answer'.");
         line("Let's try again, $name!");
         die();
-    }
-
-    if ($break === true) {
-        line("Congratulations, $name!");
     }
 }
