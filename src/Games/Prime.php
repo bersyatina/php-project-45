@@ -11,12 +11,12 @@ $name = getGreeting();
 for ($iter = 0; $iter < 3; $iter++) {
     $a = rand(1, 100);
 
-    $answer = gmp_prob_prime($a, $repetitions = 100);
-
-    if ($answer == 0) {
-        $answer = 'no';
-    } else {
-        $answer = 'yes';
+    $answer = 'yes';
+    for ($i = 2; $i < $a; $i++) {
+        if ($a % $i === 0) {
+            $answer = 'no';
+            break;
+        }
     }
 
     $question = $a;

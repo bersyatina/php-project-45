@@ -13,7 +13,14 @@ for ($iter = 0; $iter < 3; $iter++) {
     $b = rand(1, 100);
 
     $question = "$a $b";
-    $answer = gmp_gcd($a, $b);
+
+    while ($b != 0)
+    {
+        $m = $a % $b;
+        $a = $b;
+        $b = $m;
+    }
+    $answer = $a;
 
     $iter === 2 ? $break = true : $break = false;
 
