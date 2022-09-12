@@ -4,11 +4,7 @@ namespace Code;
 
 require_once __DIR__ . '/../Engine.php';
 
-$condition = 'What is the result of the expression?';
-
-$name = getGreeting();
-
-for ($iter = 0; $iter < 3; $iter++) {
+for ($iter = 0; $iter < GAME_ITERATOR; $iter++) {
     $a = rand(1, 100);
     $b = rand(1, 100);
 
@@ -30,7 +26,5 @@ for ($iter = 0; $iter < 3; $iter++) {
             break;
     }
 
-    $iter === 2 ? $break = true : $break = false;
-
-    getAnswers($condition, $question, $answer, $break, $name);
+    getAnswers($condition, $question, $answer, $iter, $name);
 }
