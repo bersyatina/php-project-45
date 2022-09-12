@@ -4,7 +4,7 @@ namespace Code;
 
 require_once __DIR__ . '/../Engine.php';
 
-for ($iter = 0; $iter < GAME_ITERATOR; $iter++) {
+for ($iter = 1; $iter < GAME_ITERATOR; $iter++) {
     $start = rand(1, 5);
     $end = 100;
     $step = rand(5, 15);
