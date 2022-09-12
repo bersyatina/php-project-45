@@ -17,13 +17,12 @@ function getAnswers(string $condition, string|int $question, string|int $answer,
 
     $userQuestion = prompt("Question: $question");
 
-    if ($iter === GAME_ITERATOR) {
-        line("Congratulations, {$name}!");
-    }
-
-    if ($userQuestion == $answer) {
+    if ($userQuestion === $answer) {
         line("Your answer: {$question}");
         line("Correct!");
+        if ($iter === GAME_ITERATOR) {
+            line("Congratulations, {$name}!");
+        }
     } else {
         line("Your answer: {$userQuestion}");
         line("'{$userQuestion}' is wrong answer ;(. Correct answer was '{$answer}'.");
