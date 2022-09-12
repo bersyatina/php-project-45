@@ -6,11 +6,11 @@ use function cli\line;
 use function cli\prompt;
 
 const GAME_ITERATOR = 3;
-
+// phpcs:disable
 line('Welcome to the Brain Games!');
 $name = prompt('May I have your name?');
 line("Hello, %s!", $name);
-
+// phpcs:enable
 function getAnswers(string $condition, string|int $question, string|int $answer, int $iter, string $name)
 {
     line($condition);
