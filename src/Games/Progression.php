@@ -6,7 +6,7 @@ require_once __DIR__ . '/../Engine.php';
 
 $name = getName();
 
-$condition = 'What number is missing in the progression?';
+const CONDITION = 'What number is missing in the progression?';
 
 for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
     $start = rand(1, 5);
@@ -29,5 +29,5 @@ for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
     }
     $question = rtrim($question);
 
-    getAnswers($condition, $question, $answer, $iter, $name);
+    getAnswers(CONDITION, $question, $answer, $iter, $name);
 }

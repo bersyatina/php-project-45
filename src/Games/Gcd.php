@@ -6,7 +6,7 @@ require_once __DIR__ . '/../Engine.php';
 
 $name = getName();
 
-$condition = 'Find the greatest common divisor of given numbers.';
+const CONDITION = 'Find the greatest common divisor of given numbers.';
 
 for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
     $a = rand(1, 100);
@@ -21,5 +21,5 @@ for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
     }
     $answer = $a;
 
-    getAnswers($condition, $question, $answer, $iter, $name);
+    getAnswers(CONDITION, $question, $answer, $iter, $name);
 }
