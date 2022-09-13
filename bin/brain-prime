@@ -11,7 +11,7 @@ if (file_exists($autoloadPath1)) {
 	    require_once $autoloadPath2;
 }
 
-$condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const CONDITION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 require_once __DIR__ . '/../src/Games/Prime.php';
 

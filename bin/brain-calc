@@ -11,6 +11,6 @@ if (file_exists($autoloadPath1)) {
 	    require_once $autoloadPath2;
 }
 
-$condition = 'What is the result of the expression?';
+const CONDITION = 'What is the result of the expression?';
 
 require_once __DIR__ . '/../src/Games/Calc.php';

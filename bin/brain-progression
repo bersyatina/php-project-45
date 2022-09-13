@@ -11,7 +11,7 @@ if (file_exists($autoloadPath1)) {
 	    require_once $autoloadPath2;
 }
 
-$condition = 'What number is missing in the progression?';
+const CONDITION = 'What number is missing in the progression?';
 
 require_once __DIR__ . '/../src/Games/Progression.php';
 

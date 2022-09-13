@@ -11,13 +11,13 @@ line('Welcome to the Brain Games!');
 $name = prompt('May I have your name?');
 line("Hello, %s!", $name);
 // phpcs:enable
-function getAnswers(string $condition, string|int $question, string|int $answer, int $iter, string $name)
+function getAnswers(string|int $question, string|int $answer, int $iter, string $name)
 {
-    line($condition);
+    line(CONDITION);
 
     $userQuestion = prompt("Question: $question");
 
-    if ($userQuestion == $answer) {
+    if ($userQuestion === $answer) {
         line("Your answer: {$question}");
         line("Correct!");
         if ($iter === GAME_ITERATOR) {

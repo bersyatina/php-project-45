@@ -17,5 +17,5 @@ for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
     }
     $answer = $a;
 
-    getAnswers($condition, $question, $answer, $iter, $name);
+    getAnswers($question, $answer, $iter, $name);
 }
