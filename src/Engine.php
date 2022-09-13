@@ -17,7 +17,7 @@ function getAnswers(string|int $question, string|int $answer, int $iter, string 
 
     $userQuestion = prompt("Question: $question");
 
-    if ($userQuestion === $answer) {
+    if ($userQuestion == $answer) {
         line("Your answer: {$question}");
         line("Correct!");
         if ($iter === GAME_ITERATOR) {
