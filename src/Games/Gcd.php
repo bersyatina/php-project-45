@@ -4,6 +4,8 @@ namespace Code;
 
 require_once __DIR__ . '/../Engine.php';
 
+$name = getName();
+
 for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
     $a = rand(1, 100);
     $b = rand(1, 100);

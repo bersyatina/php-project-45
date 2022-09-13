@@ -6,11 +6,20 @@ use function cli\line;
 use function cli\prompt;
 
 const GAME_ITERATOR = 3;
-// phpcs:disable
-line('Welcome to the Brain Games!');
-$name = prompt('May I have your name?');
-line("Hello, %s!", $name);
-// phpcs:enable
+
+function getName()
+{
+    line('Welcome to the Brain Games!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
+    return $name;
+}
+
+function getVictory($name)
+{
+    line("Congratulations, {$name}!");
+}
+
 function getAnswers(string|int $question, string|int $answer, int $iter, string $name)
 {
     line(CONDITION);
@@ -21,7 +30,7 @@ function getAnswers(string|int $question, string|int $answer, int $iter, string 
         line("Your answer: {$question}");
         line("Correct!");
         if ($iter === GAME_ITERATOR) {
-            line("Congratulations, {$name}!");
+            getVictory($name);
         }
     } else {
         line("Your answer: {$userQuestion}");
