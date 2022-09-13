@@ -15,19 +15,19 @@ function getName()
     return $name;
 }
 
-function getVictory($name)
+function getVictory(string $name)
 {
     line("Congratulations, {$name}!");
 }
 
-function getAnswers(string|int $question, string|int $answer, int $iter, string $name)
+function getAnswers(string $condition, string|int $question, string|int $answer, int $iter, string $name)
 {
-    line(CONDITION);
+    line($condition);
 
     $userQuestion = prompt("Question: $question");
 
     if ($userQuestion == $answer) {
-        line("Your answer: {$question}");
+        line("Your answer: {$userQuestion}");
         line("Correct!");
         if ($iter === GAME_ITERATOR) {
             getVictory($name);

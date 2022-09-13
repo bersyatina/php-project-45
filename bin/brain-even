@@ -11,6 +11,4 @@ if (file_exists($autoloadPath1)) {
 	    require_once $autoloadPath2;
 }
 
-const CONDITION = 'Answer "yes" if the number is even, otherwise answer "no".';
-
 require_once __DIR__ . '/../src/Games/Logic.php';

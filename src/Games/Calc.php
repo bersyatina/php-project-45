@@ -6,6 +6,8 @@ require_once __DIR__ . '/../Engine.php';
 
 $name = getName();
 
+$condition = 'What is the result of the expression?';
+
 for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
     $a = rand(1, 100);
     $b = rand(1, 100);
@@ -28,5 +30,5 @@ for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
             break;
     }
 
-    getAnswers($question, $answer, $iter, $name);
+    getAnswers($condition, $question, $answer, $iter, $name);
 }

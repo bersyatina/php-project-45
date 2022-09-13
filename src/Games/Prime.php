@@ -6,6 +6,8 @@ require_once __DIR__ . '/../Engine.php';
 
 $name = getName();
 
+$condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
     $a = rand(1, 100);
 
@@ -23,5 +25,5 @@ for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
 
     $question = $a;
 
-    getAnswers($question, $answer, $iter, $name, $name);
+    getAnswers($condition, $question, $answer, $iter, $name);
 }
