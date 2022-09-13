@@ -20,7 +20,7 @@ for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
     }
 
     if ($a === 1) {
-        $answer = 'yes';
+        $answer = 'no';
     }
 
     $question = $a;
