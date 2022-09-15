@@ -7,35 +7,27 @@ use function cli\prompt;
 
 const GAME_ITERATOR = 3;
 
-function getName()
+function getAnswers(string $condition, array $data)
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    return $name;
-}
 
-function getVictory(string $name)
-{
-    line("Congratulations, {$name}!");
-}
+    foreach ($data as $value) {
+        line($condition);
 
-function getAnswers(string $condition, string|int $question, string|int $answer, int $iter, string $name)
-{
-    line($condition);
+        $userQuestion = prompt("Question: {$value['question']}");
 
-    $userQuestion = prompt("Question: $question");
-
-    if ($userQuestion == $answer) {
-        line("Your answer: {$userQuestion}");
-        line("Correct!");
-        if ($iter === GAME_ITERATOR) {
-            getVictory($name);
+        if ($userQuestion == $value['answer']) {
+            line("Your answer: {$userQuestion}");
+            line("Correct!");
+        } else {
+            line("Your answer: {$userQuestion}");
+            line("'{$userQuestion}' is wrong answer ;(. Correct answer was '{$value['answer']}'.");
+            line("Let's try again, $name!");
+            die();
         }
-    } else {
-        line("Your answer: {$userQuestion}");
-        line("'{$userQuestion}' is wrong answer ;(. Correct answer was '{$answer}'.");
-        line("Let's try again, $name!");
-        die();
     }
+
+    line("Congratulations, {$name}!");
 }
