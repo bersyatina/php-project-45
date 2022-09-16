@@ -2,6 +2,8 @@
 
 namespace Code;
 
+const CONDITION = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 function playLogicGame()
 {
     $data = [];

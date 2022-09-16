@@ -2,6 +2,8 @@
 
 namespace Code;
 
+const CONDITION = 'Find the greatest common divisor of given numbers.';
+
 function playGcdGame()
 {
     $data = [];

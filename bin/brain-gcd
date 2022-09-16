@@ -10,7 +10,6 @@ if (file_exists($autoloadPath1)) {
 } else {
 	    require_once $autoloadPath2;
 }
-const CONDITION = 'Find the greatest common divisor of given numbers.';
 
 playGcdGame();
 

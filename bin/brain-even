@@ -10,7 +10,6 @@ if (file_exists($autoloadPath1)) {
 } else {
 	    require_once $autoloadPath2;
 }
-const CONDITION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 playLogicGame();
 

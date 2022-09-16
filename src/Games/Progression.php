@@ -2,6 +2,8 @@
 
 namespace Code;
 
+const CONDITION = 'What number is missing in the progression?';
+
 function playProgressionGame()
 {
     $data = [];

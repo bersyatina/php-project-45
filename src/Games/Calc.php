@@ -2,6 +2,8 @@
 
 namespace Code;
 
+const CONDITION = 'What is the result of the expression?';
+
 function playCalcGame()
 {
     $data = [];
