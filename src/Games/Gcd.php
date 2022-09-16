@@ -6,8 +6,8 @@ const CONDITION = 'Find the greatest common divisor of given numbers.';
 
 function playGcdGame()
 {
-    $data = [];
-    for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
+    $rounds = [];
+    for ($iter = 1; $iter <= ROUNDS_COUNT; $iter++) {
         $a = rand(1, 100);
         $b = rand(1, 100);
 
@@ -20,10 +20,10 @@ function playGcdGame()
         }
         $answer = $a;
 
-        $data[] = [
+        $rounds[] = [
             'question' => $question,
             'answer' => $answer,
         ];
     }
-    getAnswers(CONDITION, $data);
+    getAnswers(CONDITION, $rounds);
 }

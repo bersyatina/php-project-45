@@ -6,9 +6,9 @@ const CONDITION = 'What is the result of the expression?';
 
 function playCalcGame()
 {
-    $data = [];
+    $rounds = [];
     $condition = CONDITION;
-    for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
+    for ($iter = 1; $iter <= ROUNDS_COUNT; $iter++) {
         $a = rand(1, 100);
         $b = rand(1, 100);
 
@@ -29,11 +29,11 @@ function playCalcGame()
                 $answer = $a * $b;
                 break;
         }
-        $data[] = [
+        $rounds[] = [
             'question' => $question,
             'answer' => $answer,
         ];
     }
 
-    getAnswers($condition, $data);
+    getAnswers($condition, $rounds);
 }

@@ -6,9 +6,9 @@ const CONDITION = 'What number is missing in the progression?';
 
 function playProgressionGame()
 {
-    $data = [];
+    $rounds = [];
 
-    for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
+    for ($iter = 1; $iter <= ROUNDS_COUNT; $iter++) {
         $start = rand(1, 5);
         $end = 100;
         $step = rand(5, 15);
@@ -29,10 +29,10 @@ function playProgressionGame()
         }
         $question = rtrim($question);
 
-        $data[] = [
+        $rounds[] = [
             'question' => $question,
             'answer' => $answer,
         ];
     }
-    getAnswers(CONDITION, $data);
+    getAnswers(CONDITION, $rounds);
 }

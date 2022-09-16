@@ -6,9 +6,9 @@ const CONDITION = 'Answer "yes" if given number is prime. Otherwise answer "no".
 
 function playPrimeGame()
 {
-    $data = [];
+    $rounds = [];
 
-    for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
+    for ($iter = 1; $iter <= ROUNDS_COUNT; $iter++) {
         $a = rand(1, 100);
 
         $answer = 'yes';
@@ -24,10 +24,10 @@ function playPrimeGame()
         }
 
         $question = $a;
-        $data[] = [
+        $rounds[] = [
             'question' => $question,
             'answer' => $answer,
         ];
     }
-    getAnswers(CONDITION, $data);
+    getAnswers(CONDITION, $rounds);
 }
