@@ -2,15 +2,17 @@
 
 namespace Code;
 
-require_once __DIR__ . '/../Engine.php';
+function playLogicGame()
+{
+    $data = [];
+    for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
+        $question = rand(0, 100);
+        $question % 2 === 0 ? $answer = 'yes' : $answer = 'no';
 
-$name = getName();
-
-const CONDITION = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
-    $question = rand(0, 100);
-    $question % 2 === 0 ? $answer = 'yes' : $answer = 'no';
-
-    getAnswers(CONDITION, $question, $answer, $iter, $name);
+        $data[] = [
+            'question' => $question,
+            'answer' => $answer,
+        ];
+    }
+    getAnswers(CONDITION, $data);
 }

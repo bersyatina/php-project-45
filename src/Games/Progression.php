@@ -2,32 +2,35 @@
 
 namespace Code;
 
-require_once __DIR__ . '/../Engine.php';
+function playProgressionGame()
+{
+    $data = [];
 
-$name = getName();
+    for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
+        $start = rand(1, 5);
+        $end = 100;
+        $step = rand(5, 15);
 
-const CONDITION = 'What number is missing in the progression?';
+        $array = range($start, $end, $step);
 
-for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
-    $start = rand(1, 5);
-    $end = 100;
-    $step = rand(5, 15);
+        $answer = $array[array_rand($array)];
 
-    $array = range($start, $end, $step);
+        $question = '';
 
-    $answer = $array[array_rand($array)];
-
-    $question = '';
-
-    foreach ($array as $value) {
-        if ($value == $answer) {
-            $question .= '..';
-        } else {
-            $question .= $value;
+        foreach ($array as $value) {
+            if ($value == $answer) {
+                $question .= '..';
+            } else {
+                $question .= $value;
+            }
+            $question .= ' ';
         }
-        $question .= ' ';
-    }
-    $question = rtrim($question);
+        $question = rtrim($question);
 
-    getAnswers(CONDITION, $question, $answer, $iter, $name);
+        $data[] = [
+            'question' => $question,
+            'answer' => $answer,
+        ];
+    }
+    getAnswers(CONDITION, $data);
 }

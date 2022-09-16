@@ -2,24 +2,26 @@
 
 namespace Code;
 
-require_once __DIR__ . '/../Engine.php';
+function playGcdGame()
+{
+    $data = [];
+    for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
+        $a = rand(1, 100);
+        $b = rand(1, 100);
 
-$name = getName();
+        $question = "$a $b";
 
-const CONDITION = 'Find the greatest common divisor of given numbers.';
+        while ($b != 0) {
+            $m = $a % $b;
+            $a = $b;
+            $b = $m;
+        }
+        $answer = $a;
 
-for ($iter = 1; $iter <= GAME_ITERATOR; $iter++) {
-    $a = rand(1, 100);
-    $b = rand(1, 100);
-
-    $question = "$a $b";
-
-    while ($b != 0) {
-        $m = $a % $b;
-        $a = $b;
-        $b = $m;
+        $data[] = [
+            'question' => $question,
+            'answer' => $answer,
+        ];
     }
-    $answer = $a;
-
-    getAnswers(CONDITION, $question, $answer, $iter, $name);
+    getAnswers(CONDITION, $data);
 }
