@@ -1,8 +1,12 @@
 <?php
 
-namespace Code;
+namespace Code\Games\Progression;
 
-const CONDITION = 'What number is missing in the progression?';
+use function Code\playGame;
+
+use const Code\ROUNDS_COUNT;
+
+const DESCRIPTION = 'What number is missing in the progression?';
 
 function playProgressionGame()
 {
@@ -34,5 +38,5 @@ function playProgressionGame()
             'answer' => $answer,
         ];
     }
-    getAnswers(CONDITION, $rounds);
+    playGame(DESCRIPTION, $rounds);
 }

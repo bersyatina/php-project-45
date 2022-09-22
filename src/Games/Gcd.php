@@ -1,8 +1,12 @@
 <?php
 
-namespace Code;
+namespace Code\Games\Gcd;
 
-const CONDITION = 'Find the greatest common divisor of given numbers.';
+use function Code\playGame;
+
+use const Code\ROUNDS_COUNT;
+
+const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function playGcdGame()
 {
@@ -25,5 +29,5 @@ function playGcdGame()
             'answer' => $answer,
         ];
     }
-    getAnswers(CONDITION, $rounds);
+    playGame(DESCRIPTION, $rounds);
 }

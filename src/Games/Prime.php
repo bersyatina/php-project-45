@@ -1,8 +1,12 @@
 <?php
 
-namespace Code;
+namespace Code\Games\Prime;
 
-const CONDITION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+use function Code\playGame;
+
+use const Code\ROUNDS_COUNT;
+
+const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function playPrimeGame()
 {
@@ -29,5 +33,5 @@ function playPrimeGame()
             'answer' => $answer,
         ];
     }
-    getAnswers(CONDITION, $rounds);
+    playGame(DESCRIPTION, $rounds);
 }

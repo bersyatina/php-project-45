@@ -1,13 +1,16 @@
 <?php
 
-namespace Code;
+namespace Code\Games\Calc;
 
-const CONDITION = 'What is the result of the expression?';
+use function Code\playGame;
+
+use const Code\ROUNDS_COUNT;
+
+const DESCRIPTION = 'What is the result of the expression?';
 
 function playCalcGame()
 {
     $rounds = [];
-    $condition = CONDITION;
     for ($iter = 1; $iter <= ROUNDS_COUNT; $iter++) {
         $a = rand(1, 100);
         $b = rand(1, 100);
@@ -34,6 +37,5 @@ function playCalcGame()
             'answer' => $answer,
         ];
     }
-
-    getAnswers($condition, $rounds);
+    playGame(DESCRIPTION, $rounds);
 }
