@@ -8,35 +8,35 @@ use const Code\ROUNDS_COUNT;
 
 const DESCRIPTION = 'What number is missing in the progression?';
 
+function getPrepareData()
+{
+    $start = rand(1, 5);
+    $end = 100;
+    $step = rand(5, 15);
+
+    $arrayProgression = range($start, $end, $step);
+
+    $answer = $arrayProgression[array_rand($arrayProgression)];
+
+    $question = [];
+
+    foreach ($arrayProgression as $value) {
+        $question[] = $value == $answer ? '..' : $value;
+    }
+    $question = implode(' ', $question);
+
+    return [
+        'question' => $question,
+        'answer' => $answer
+    ];
+}
+
 function playProgressionGame()
 {
     $rounds = [];
 
     for ($iter = 1; $iter <= ROUNDS_COUNT; $iter++) {
-        $start = rand(1, 5);
-        $end = 100;
-        $step = rand(5, 15);
-
-        $array = range($start, $end, $step);
-
-        $answer = $array[array_rand($array)];
-
-        $question = '';
-
-        foreach ($array as $value) {
-            if ($value == $answer) {
-                $question .= '..';
-            } else {
-                $question .= $value;
-            }
-            $question .= ' ';
-        }
-        $question = rtrim($question);
-
-        $rounds[] = [
-            'question' => $question,
-            'answer' => $answer,
-        ];
+        $rounds[] = getPrepareData();
     }
     playGame(DESCRIPTION, $rounds);
 }

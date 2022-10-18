@@ -13,7 +13,7 @@ function playEvenGame()
     $rounds = [];
     for ($iter = 1; $iter <= ROUNDS_COUNT; $iter++) {
         $question = rand(0, 100);
-        $question % 2 === 0 ? $answer = 'yes' : $answer = 'no';
+        $answer = $question % 2 === 0 ? 'yes' : 'no';
 
         $rounds[] = [
             'question' => $question,

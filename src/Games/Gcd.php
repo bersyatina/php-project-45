@@ -8,26 +8,32 @@ use const Code\ROUNDS_COUNT;
 
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
+function getPrepareData()
+{
+    $firstNumber = rand(1, 100);
+    $twoNumber = rand(1, 100);
+
+    $question = "$firstNumber $twoNumber";
+
+    while ($twoNumber != 0) {
+        $gcd = $firstNumber % $twoNumber;
+        $firstNumber = $twoNumber;
+        $twoNumber = $gcd;
+    }
+
+    $answer = $firstNumber;
+
+    return [
+        'question' => $question,
+        'answer' => $answer,
+    ];
+}
+
 function playGcdGame()
 {
     $rounds = [];
     for ($iter = 1; $iter <= ROUNDS_COUNT; $iter++) {
-        $a = rand(1, 100);
-        $b = rand(1, 100);
-
-        $question = "$a $b";
-
-        while ($b != 0) {
-            $m = $a % $b;
-            $a = $b;
-            $b = $m;
-        }
-        $answer = $a;
-
-        $rounds[] = [
-            'question' => $question,
-            'answer' => $answer,
-        ];
+        $rounds[] = getPrepareData();
     }
     playGame(DESCRIPTION, $rounds);
 }

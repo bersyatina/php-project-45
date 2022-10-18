@@ -25,7 +25,7 @@ function playGame(string $description, array $rounds)
             line("Your answer: {$userAnswer}");
             line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$round['answer']}'.");
             line("Let's try again, $name!");
-            die();
+            return;
         }
     }
 
