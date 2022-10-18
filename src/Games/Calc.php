@@ -16,9 +16,10 @@ function getPrepareData()
     $operators = ["+", "-", "*"];
     $operator = array_rand($operators);
 
-    $question = "$firsNumber $operator $lastNumber";
+    $question = "$firsNumber $operators[$operator] $lastNumber";
 
-    switch ($operator) {
+    $answer = null;
+    switch ($operators[$operator]) {
         case "+":
             $answer = $firsNumber + $lastNumber;
             break;
