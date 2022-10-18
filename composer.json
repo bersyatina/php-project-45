@@ -4,7 +4,6 @@
         "files": [
             "src/Cli.php",
             "src/Engine.php",
-            "src/StringUtils.php",
             "src/Games/Calc.php",
             "src/Games/Gcd.php",
             "src/Games/Even.php",
