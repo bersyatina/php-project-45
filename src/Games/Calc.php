@@ -16,7 +16,7 @@ function getPrepareData()
     $operators = ["+", "-", "*"];
     $operator = array_rand($operators);
 
-    $question = "$firsNumber $operators[$operator] $lastNumber";
+    $question = "{$firsNumber} {$operators[$operator]} {$lastNumber}";
 
     $answer = null;
     switch ($operators[$operator]) {

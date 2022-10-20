@@ -13,7 +13,7 @@ function getPrepareData()
     $firstNumber = rand(1, 100);
     $twoNumber = rand(1, 100);
 
-    $question = "$firstNumber $twoNumber";
+    $question = "{$firstNumber} {$twoNumber}";
 
     while ($twoNumber != 0) {
         $gcd = $firstNumber % $twoNumber;
