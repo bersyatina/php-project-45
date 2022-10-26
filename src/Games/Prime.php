@@ -8,7 +8,7 @@ use const Code\ROUNDS_COUNT;
 
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function isPrime($number, $iter)
+function isPrime(int $number, int $iter)
 {
     return $number % $iter === 0;
 }
