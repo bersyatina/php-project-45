@@ -8,7 +8,7 @@ use const Code\ROUNDS_COUNT;
 
 const DESCRIPTION = 'What is the result of the expression?';
 
-function calculate(string $operator, int $firsNumber, int $lastNumber): int
+function calculate(string $operator, int $firsNumber, int $lastNumber)
 {
     switch ($operator) {
         case "+":
