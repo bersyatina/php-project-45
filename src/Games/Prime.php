@@ -8,14 +8,19 @@ use const Code\ROUNDS_COUNT;
 
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
+function isPrime($number, $iter)
+{
+    return $number % $iter === 0;
+}
+
 function getPrepareData()
 {
     $number = rand(1, 100);
 
     $answer = 'yes';
     for ($iter = 2; $iter < $number; $iter++) {
-        if ($number % $iter === 0) {
-            $answer = 'no';
+        $answer = isPrime($number, $iter) ? 'no' : 'yes';
+        if ($answer === 'no') {
             break;
         }
     }
