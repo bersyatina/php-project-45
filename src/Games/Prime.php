@@ -25,7 +25,7 @@ function isPrime(int $number): bool
     return $answer;
 }
 
-function getPrepareData()
+function prepareData(): array
 {
     $number = rand(1, 100);
 
@@ -40,7 +40,7 @@ function playPrimeGame()
     $rounds = [];
 
     for ($iter = 1; $iter <= ROUNDS_COUNT; $iter++) {
-        $rounds[] = getPrepareData();
+        $rounds[] = prepareData();
     }
     playGame(DESCRIPTION, $rounds);
 }

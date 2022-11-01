@@ -8,7 +8,7 @@ use const Code\ROUNDS_COUNT;
 
 const DESCRIPTION = 'What number is missing in the progression?';
 
-function getPrepareData()
+function prepareData(): array
 {
     $start = rand(1, 5);
     $end = 100;
@@ -36,7 +36,7 @@ function playProgressionGame()
     $rounds = [];
 
     for ($iter = 1; $iter <= ROUNDS_COUNT; $iter++) {
-        $rounds[] = getPrepareData();
+        $rounds[] = prepareData();
     }
     playGame(DESCRIPTION, $rounds);
 }

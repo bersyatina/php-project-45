@@ -20,7 +20,7 @@ function calculate(string $operator, int $firsNumber, int $lastNumber)
     }
 }
 
-function prepareData()
+function prepareData(): array
 {
     $firsNumber = rand(1, 100);
     $lastNumber = rand(1, 100);

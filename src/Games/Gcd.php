@@ -8,7 +8,7 @@ use const Code\ROUNDS_COUNT;
 
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
-function getPrepareData()
+function prepareData(): array
 {
     $firstNumber = rand(1, 100);
     $secondNumber = rand(1, 100);
@@ -33,7 +33,7 @@ function playGcdGame()
 {
     $rounds = [];
     for ($iter = 1; $iter <= ROUNDS_COUNT; $iter++) {
-        $rounds[] = getPrepareData();
+        $rounds[] = prepareData();
     }
     playGame(DESCRIPTION, $rounds);
 }
